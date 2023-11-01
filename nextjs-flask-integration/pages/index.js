@@ -14,7 +14,7 @@ export default function Home() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5001/scan', {
+      const response = await fetch('http://43.200.177.222:5001/scan', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
