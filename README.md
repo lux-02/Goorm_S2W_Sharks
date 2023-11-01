@@ -1,1 +1,2 @@
-# Goorm_S2W_Sharks
+# Project #1 - Port Scan & Banner Grabbing
+![](./logo.jpg)
