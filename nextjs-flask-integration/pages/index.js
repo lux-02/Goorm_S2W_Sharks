@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from '@/styles/Home.module.css';
-import wellKnownPorts from '@/pages/wellKnownPorts';
+import wellKnownPorts from '@/public/data/wellKnownPorts';
 
 export default function Home() {
   const [ip, setIp] = useState('');
