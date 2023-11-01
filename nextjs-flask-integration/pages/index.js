@@ -6,8 +6,13 @@ export default function Home() {
   const [ip, setIp] = useState('');
   const [results, setResults] = useState([]);
   const [detail, setDetail] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+
 
   const handleScan = async () => {
+    setIsLoading(true);
+
     try {
       const response = await fetch('http://localhost:5001/scan', {
         method: 'POST',
@@ -23,6 +28,7 @@ export default function Home() {
     } catch (error) {
       console.error('Failed to fetch:', error);
     }
+    setIsLoading(false);
   };
 
   function showDetail(port, banner) {
@@ -37,9 +43,9 @@ export default function Home() {
           type="text"
           value={ip}
           onChange={(e) => setIp(e.target.value)}
-          placeholder="Enter IP"
+          placeholder="43.200.177.222"
         />
-        <button onClick={handleScan}>START</button>
+        <button onClick={handleScan}>{isLoading ? 'Loading...' : 'START'}</button>
       </div>
       <div className={styles.results}>
         {results.map((result, index) => (
